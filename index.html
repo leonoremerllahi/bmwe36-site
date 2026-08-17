@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>BMWE36.CH — La communauté des passionnés BMW E36 en Suisse</title>
+<meta name="description" content="BMWE36.CH est la communauté des passionnés de BMW E36 en Suisse romande : événements, balades et partenaires." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#12151a;
+    --paper:#ffffff;
+    --surface:#f3f4f2;
+    --navy:#2c4a6e;
+    --navy-dark:#213a58;
+    --e36-blue:#1e5fd9;
+    --e36-red:#e31b23;
+    --line: rgba(18,21,26,0.12);
+    --max: 1180px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.brand,.btn{
+    font-family:'Space Grotesk',system-ui,sans-serif;
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;}
+
+  /* Header */
+  header.site{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,0.9);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  header.site .wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    height:76px;
+  }
+  .brand{font-size:1.3rem;font-weight:700;letter-spacing:-0.02em;text-decoration:none;}
+  .brand .e{color:var(--e36-blue);}
+  .brand .num{color:var(--e36-red);}
+  nav.primary{display:flex;gap:32px;}
+  nav.primary a{
+    font-size:0.95rem;font-weight:500;text-decoration:none;color:var(--ink);
+    opacity:0.75; transition:opacity .2s ease;
+  }
+  nav.primary a:hover{opacity:1;}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;
+    padding:13px 26px;border-radius:8px;
+    background:var(--navy);color:#fff;
+    font-weight:600;font-size:0.95rem;text-decoration:none;
+    border:1px solid var(--navy);
+    transition:background .2s ease, transform .15s ease;
+  }
+  .btn:hover{background:var(--navy-dark);}
+  .btn:active{transform:scale(0.98);}
+  .btn:focus-visible, a:focus-visible, button:focus-visible{
+    outline:3px solid var(--e36-blue); outline-offset:2px;
+  }
+
+  /* Road divider — signature element */
+  .road{
+    height:34px;
+    background:#e9eae7;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    overflow:hidden;
+    position:relative;
+  }
+  .road::before{
+    content:"";
+    position:absolute; left:0; right:0; top:50%;
+    height:4px; margin-top:-2px;
+    background-image:repeating-linear-gradient(90deg,#ffffff 0 34px, transparent 34px 64px);
+    animation:drive 3.2s linear infinite;
+  }
+  @keyframes drive{ from{background-position:0 0;} to{background-position:-98px 0;} }
+  @media (prefers-reduced-motion:reduce){ .road::before{animation:none;} }
+
+  /* Hero */
+  .hero{padding:88px 0 64px;}
+  .hero-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:56px;align-items:center;}
+  .eyebrow{
+    font-size:0.8rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;
+    color:var(--navy); margin-bottom:18px;
+  }
+  h1{
+    font-size:clamp(2.2rem, 4.6vw, 3.4rem);
+    line-height:1.06; letter-spacing:-0.02em; font-weight:700; margin:0 0 22px;
+  }
+  h1 .accent{color:var(--e36-blue);}
+  h1 .accent2{color:var(--e36-red);}
+  .lede{font-size:1.08rem;line-height:1.6;color:#3a3f47;max-width:46ch;margin:0 0 32px;}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn-ghost{
+    display:inline-flex;align-items:center;padding:13px 22px;border-radius:8px;
+    border:1px solid var(--line); font-weight:600; font-size:0.95rem; text-decoration:none; color:var(--ink);
+  }
+
+  .mosaic{
+    display:grid;
+    grid-template-columns:1.3fr 1fr;
+    grid-template-rows:1fr 1fr;
+    gap:14px;
+    height:420px;
+  }
+  .mosaic .ph{
+    border-radius:12px; background:var(--surface);
+    background-size:cover; background-position:center;
+    overflow:hidden; position:relative;
+  }
+  .mosaic .ph.tall{grid-row:1 / span 2;}
+  .mosaic .ph::after{
+    content:attr(data-label);
+    position:absolute; left:10px; bottom:10px;
+    font-size:0.68rem; font-weight:600; color:#8a8f96;
+    background:rgba(255,255,255,0.85); padding:3px 8px; border-radius:6px;
+  }
+
+  /* Sections */
+  section{padding:76px 0;}
+  section.alt{background:var(--surface);}
+  .section-head{max-width:640px; margin-bottom:40px;}
+  .section-head h2{font-size:clamp(1.7rem,3vw,2.3rem); margin:0 0 14px; letter-spacing:-0.02em;}
+  .section-head p{font-size:1.02rem; line-height:1.6; color:#3a3f47; margin:0;}
+
+  /* Events */
+  .event-strip{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:16px;
+  }
+  .event-strip .ph{
+    aspect-ratio:4/5; border-radius:10px; background:#e3e5e1;
+    background-size:cover; background-position:center;
+    position:relative; overflow:hidden;
+  }
+  .event-strip .ph::after{
+    content:attr(data-label);
+    position:absolute; left:0; right:0; bottom:0;
+    font-size:0.72rem; font-weight:600; color:#fff;
+    padding:22px 12px 10px;
+    background:linear-gradient(0deg, rgba(0,0,0,0.55), transparent);
+  }
+
+  /* Partenaires */
+  .partner-row{
+    display:flex; gap:16px; flex-wrap:wrap; margin-top:8px;
+  }
+  .partner-card{
+    flex:1 1 220px; border:1px solid var(--line); border-radius:10px;
+    padding:22px; background:#fff;
+  }
+  .partner-card .name{font-weight:600; margin-bottom:6px;}
+  .partner-card .role{font-size:0.9rem; color:#6b7078;}
+
+  /* About */
+  .about-grid{display:grid; grid-template-columns:0.9fr 1.1fr; gap:56px; align-items:start;}
+  .about-grid p{font-size:1.02rem; line-height:1.72; color:#2a2e34; margin:0 0 18px;}
+  .about-grid p:last-child{margin-bottom:0;}
+  .about-wheel{
+    width:100%; aspect-ratio:1; border-radius:50%;
+    background:radial-gradient(circle at 50% 50%, #fff 0 14%, var(--surface) 15% 100%);
+    border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .about-wheel svg{width:58%;height:58%;}
+
+  /* Footer */
+  footer{padding:76px 0 40px; text-align:center;}
+  footer .wheel-mark{width:110px;margin:0 auto 34px;}
+  footer h2{font-size:1.6rem; margin:0 0 26px;}
+  footer .btn{padding:15px 34px;}
+  .foot-links{
+    display:flex; justify-content:center; gap:28px; flex-wrap:wrap;
+    margin:52px 0 28px; padding-top:32px; border-top:1px solid var(--line);
+  }
+  .foot-links a{font-size:0.92rem; text-decoration:none; opacity:0.75;}
+  .foot-links a:hover{opacity:1;}
+  .socials{display:flex; justify-content:center; gap:12px; margin-bottom:20px;}
+  .socials a{
+    width:38px;height:38px;border-radius:9px;background:var(--ink);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .socials svg{width:18px;height:18px;fill:#fff;}
+  .fine{font-size:0.8rem; color:#8a8f96;}
+
+  @media (max-width: 860px){
+    nav.primary{display:none;}
+    .hero-grid{grid-template-columns:1fr; gap:36px;}
+    .mosaic{height:320px;}
+    .event-strip{grid-template-columns:repeat(2,1fr);}
+    .about-grid{grid-template-columns:1fr;}
+    .about-wheel{max-width:220px;margin:0 auto;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a href="#top" class="brand">BMW<span class="e">E3</span><span class="num">6</span>.CH</a>
+    <nav class="primary">
+      <a href="#evenements">Événements</a>
+      <a href="#partenaires">Partenaires</a>
+      <a href="#apropos">À propos</a>
+    </nav>
+    <a class="btn" href="#rejoindre">Rejoindre</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Communauté Suisse romande</p>
+        <h1>La communauté pour les fans BMW <span class="accent">E</span><span class="accent2">36</span> en Suisse</h1>
+        <p class="lede">Balades, événements et rencontres entre passionnés d'une génération de BMW devenue culte. Rejoins une communauté qui partage la même passion, du coupé à la Touring.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#rejoindre">Rejoindre la communauté</a>
+          <a class="btn-ghost" href="#evenements">Voir les événements</a>
+        </div>
+      </div>
+      <div class="mosaic">
+        <div class="ph tall" data-label="Balade — col des Alpes" style="background-image:url('assets/hero-1.jpg')"></div>
+        <div class="ph" data-label="Rassemblement" style="background-image:url('assets/hero-2.jpg')"></div>
+        <div class="ph" data-label="Sortie club" style="background-image:url('assets/hero-3.jpg')"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="road" role="presentation"></div>
+
+  <section id="evenements">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Événements</h2>
+        <p>Balades, rassemblements et sorties organisées tout au long de l'année pour les membres de la communauté. Quelques moments marquants ci-dessous.</p>
+      </div>
+      <div class="event-strip">
+        <div class="ph" data-label="Balade estivale" style="background-image:url('assets/event-1.jpg')"></div>
+        <div class="ph" data-label="Meeting régional" style="background-image:url('assets/event-2.jpg')"></div>
+        <div class="ph" data-label="Sortie de printemps" style="background-image:url('assets/event-3.jpg')"></div>
+        <div class="ph" data-label="Photo shoot club" style="background-image:url('assets/event-4.jpg')"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="road" role="presentation"></div>
+
+  <section id="partenaires" class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Partenaires</h2>
+        <p>Tu cherches un spécialiste pour ta BMW E36 ? Des pièces ou des conseils ? Voici les partenaires recommandés par la communauté.</p>
+      </div>
+      <div class="partner-row">
+        <div class="partner-card">
+          <div class="name">Nom du partenaire</div>
+          <div class="role">Spécialiste mécanique</div>
+        </div>
+        <div class="partner-card">
+          <div class="name">Nom du partenaire</div>
+          <div class="role">Pièces détachées</div>
+        </div>
+        <div class="partner-card">
+          <div class="name">Nom du partenaire</div>
+          <div class="role">Carrosserie / peinture</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="road" role="presentation"></div>
+
+  <section id="apropos">
+    <div class="wrap about-grid">
+      <div class="about-wheel" aria-hidden="true">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="46" stroke="var(--ink)" stroke-width="1.4"/>
+          <circle cx="50" cy="50" r="10" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.4"/>
+          <g stroke="var(--ink)" stroke-width="1.1">
+            <line x1="50" y1="4" x2="50" y2="96"/>
+            <line x1="4" y1="50" x2="96" y2="50"/>
+            <line x1="16" y1="16" x2="84" y2="84"/>
+            <line x1="16" y1="84" x2="84" y2="16"/>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <h2 style="font-size:clamp(1.7rem,3vw,2.3rem); margin:0 0 22px; letter-spacing:-0.02em;">À propos</h2>
+        <p>Depuis mon plus jeune âge, les BMW E36 m'ont toujours fasciné. Avec leur design intemporel, leur caractère sportif et leur polyvalence, elles incarnent pour moi l'essence même du plaisir de conduite.</p>
+        <p>Aujourd'hui, en tant que passionné et propriétaire d'une E36, je ressens le besoin de créer une communauté structurée où chacun peut partager cette passion commune.</p>
+        <p>BMWE36.CH est plus qu'un simple groupe : c'est un espace où les passionnés peuvent se rassembler, échanger des conseils, organiser des événements et surtout, faire vivre et préserver cette passion.</p>
+        <p>Mon objectif est de construire une communauté forte, avec des ressources et des événements dédiés, pour que chaque membre puisse profiter pleinement. Que vous soyez un vétéran de la marque ou un nouveau venu, BMWE36.CH est là pour vous accueillir et partager ensemble cette passion.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="rejoindre">
+  <div class="wrap">
+    <div class="wheel-mark" aria-hidden="true">
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="46" stroke="var(--ink)" stroke-width="1.4"/>
+        <circle cx="50" cy="50" r="10" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.4"/>
+        <g stroke="var(--ink)" stroke-width="1.1">
+          <line x1="50" y1="4" x2="50" y2="96"/>
+          <line x1="4" y1="50" x2="96" y2="50"/>
+          <line x1="16" y1="16" x2="84" y2="84"/>
+          <line x1="16" y1="84" x2="84" y2="16"/>
+        </g>
+      </svg>
+    </div>
+    <h2>Rejoins la communauté</h2>
+    <a class="btn" href="https://chat.whatsapp.com/J8quI20mQNAHtLYfNCOCjx?mode=gi_t" target="_blank" rel="noopener">Rejoindre le groupe WhatsApp</a>
+
+    <div class="foot-links">
+      <a href="#evenements">Événements</a>
+      <a href="#partenaires">Partenaires</a>
+      <a href="#apropos">À propos</a>
+      <a href="#">Conditions générales</a>
+    </div>
+
+    <div class="socials">
+      <a href="https://instagram.com/REMPLACER" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.05 1.97.24 2.43.4a4.9 4.9 0 0 1 1.77 1.15 4.9 4.9 0 0 1 1.15 1.77c.16.46.35 1.26.4 2.43.07 1.25.07 1.65.07 4.85s0 3.6-.07 4.85c-.05 1.17-.24 1.97-.4 2.43a4.9 4.9 0 0 1-1.15 1.77 4.9 4.9 0 0 1-1.77 1.15c-.46.16-1.26.35-2.43.4-1.25.07-1.65.07-4.85.07s-3.6 0-4.85-.07c-1.17-.05-1.97-.24-2.43-.4a4.9 4.9 0 0 1-1.77-1.15 4.9 4.9 0 0 1-1.15-1.77c-.16-.46-.35-1.26-.4-2.43C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.85c.05-1.17.24-1.97.4-2.43a4.9 4.9 0 0 1 1.15-1.77A4.9 4.9 0 0 1 5.6 1.8c.46-.16 1.26-.35 2.43-.4C9.28 1.33 9.68 1.33 12 1.33Zm0 3.15a6.65 6.65 0 1 0 0 13.3 6.65 6.65 0 0 0 0-13.3Zm0 10.97a4.32 4.32 0 1 1 0-8.64 4.32 4.32 0 0 1 0 8.64Zm6.9-11.2a1.55 1.55 0 1 1-3.1 0 1.55 1.55 0 0 1 3.1 0Z"/></svg>
+      </a>
+      <a href="https://tiktok.com/@REMPLACER" target="_blank" rel="noopener" aria-label="TikTok">
+        <svg viewBox="0 0 24 24"><path d="M16.6 2h-3.2v13.6a2.9 2.9 0 1 1-2.05-2.77V9.6a6.1 6.1 0 1 0 5.25 6.05V8.9a7.6 7.6 0 0 0 4.4 1.4V7.1a4.4 4.4 0 0 1-4.4-4.4V2Z"/></svg>
+      </a>
+    </div>
+
+    <p class="fine">© <span id="year"></span> BMWE36.CH — Communauté indépendante de passionnés</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
