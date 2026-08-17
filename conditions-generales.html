@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Conditions générales — BMWE36.CH</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#12151a;
+    --paper:#ffffff;
+    --surface:#f3f4f2;
+    --navy:#2c4a6e;
+    --navy-dark:#213a58;
+    --e36-blue:#1e5fd9;
+    --e36-red:#e31b23;
+    --line: rgba(18,21,26,0.12);
+    --max: 1180px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,.brand{font-family:'Space Grotesk',system-ui,sans-serif;}
+  a{color:inherit;}
+  .wrap{max-width:760px;margin:0 auto;padding:0 28px;}
+
+  header.site{
+    border-bottom:1px solid var(--line);
+  }
+  header.site .inner{
+    max-width:var(--max);margin:0 auto;padding:0 28px;
+    display:flex;align-items:center;justify-content:space-between;
+    height:76px;
+  }
+  .brand{font-size:1.3rem;font-weight:700;letter-spacing:-0.02em;text-decoration:none;}
+  .brand .e{color:var(--e36-blue);}
+  .brand .num{color:var(--e36-red);}
+  .back{font-size:0.9rem;font-weight:600;text-decoration:none;color:var(--navy);}
+
+  main{padding:64px 0 90px;}
+  h1{font-size:clamp(1.9rem,4vw,2.6rem);letter-spacing:-0.02em;margin:0 0 40px;}
+  h2{font-size:1.15rem;margin:36px 0 12px;letter-spacing:-0.01em;}
+  h2:first-of-type{margin-top:0;}
+  p{font-size:1rem;line-height:1.7;color:#2a2e34;margin:0 0 14px;}
+  ul{margin:0 0 14px;padding-left:1.2rem;}
+  li{font-size:1rem;line-height:1.7;color:#2a2e34;margin-bottom:8px;}
+  strong{font-weight:600;}
+  a.mail{color:var(--e36-blue);text-decoration:none;}
+
+  footer{
+    border-top:1px solid var(--line);
+    padding:28px 0;text-align:center;
+  }
+  footer p{font-size:0.85rem;color:#8a8f96;margin:0;}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="inner">
+    <a href="index.html" class="brand">BMW<span class="e">E3</span><span class="num">6</span>.CH</a>
+    <a class="back" href="index.html">← Retour au site</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <h1>Conditions générales</h1>
+
+    <h2>1. Objet de la communauté</h2>
+    <p>BMWE36.CH est une communauté suisse dédiée aux passionnés de BMW E36. Elle a pour but de rassembler les amateurs de ce modèle à travers des événements, du partage de conseils, et des activités de groupe. En devenant membre de BMWE36.CH, les participants bénéficient d'avantages exclusifs, de réductions auprès de partenaires, et d'un accès privilégié à des événements organisés tout au long de l'année.</p>
+
+    <h2>2. Engagement du membre</h2>
+    <p>En devenant membre de BMWE36.CH, chaque participant s'engage à :</p>
+    <ul>
+      <li>Respecter l'esprit communautaire de partage et de bienveillance qui anime BMWE36.CH.</li>
+      <li>Respecter les règles de participation aux événements, notamment celles visant à garantir la sécurité et le respect des autres membres, des partenaires et des lieux accueillant les événements.</li>
+      <li>Ne pas utiliser les plateformes de BMWE36.CH à des fins de promotion personnelle ou commerciale non autorisée.</li>
+    </ul>
+
+    <h2>3. Communication par email</h2>
+    <p>En acceptant les présentes conditions, le membre consent à recevoir des communications par email de la part de BMWE36.CH, y compris des informations sur les événements, des offres exclusives et des actualités de la communauté. Les membres peuvent se désinscrire de certaines communications en suivant les liens de désabonnement inclus dans les emails, mais ce choix peut limiter leur accès aux informations importantes concernant les événements et avantages de la communauté.</p>
+
+    <h2>4. Droits et limitations de responsabilité</h2>
+    <p>BMWE36.CH n'est pas responsable des dommages ou pertes liés à la participation aux événements, ni de tout préjudice découlant d'un partenariat avec des tiers.</p>
+
+    <h2>Contenu</h2>
+    <p>Les informations sur bmwe36.ch sont pour référence seulement. Nous ne garantissons pas leur exactitude.</p>
+
+    <h2>Propriété intellectuelle</h2>
+    <p>Tout contenu sur bmwe36.ch est protégé. Ne copiez pas sans autorisation.</p>
+
+    <h2>Collecte de données</h2>
+    <p>Vos informations personnelles sont collectées pour les besoins de la communauté. Nous respectons votre vie privée.</p>
+
+    <h2>Contact</h2>
+    <p>Pour des questions, contactez : <a class="mail" href="mailto:hello@bmwe36.ch">hello@bmwe36.ch</a></p>
+  </div>
+</main>
+
+<footer>
+  <p>© <span id="year"></span> BMWE36.CH</p>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>
